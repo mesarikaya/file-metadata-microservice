@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <title>File meta data Detection Microservice</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+</head>
+
+<style>
+body {
+  text-align: center;
+  font-family: Arial;
+  font-size: 18px;
+  color: #222;
+  padding-top:40px;
+}
+
+container-fluid{
+  background-color: white;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 10px;
+  bottom: 10px;
+  margin: 5 auto;
+  max-width: 300px;
+  max-height: 300px;
+  opacity: 1;
+}
+
+row-fluid{
+  display: table-cell;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+centering{
+  float: none;
+  margin: 0 auto;
+}
+
+
+#fileselector{
+    margin: 10px; 
+}
+#upload-file-selector{
+    display:none;   
+}
+margin-correction{
+    margin-right: 10px;   
+}
+
+btn{
+    margin: 10px;
+}
+</style>
+
+
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <big id="fileHelp" class="form-text text-muted">
+        Submit a file to see its size
+      </big>
+      <span id="fileselector">
+        <div class="form-group">  
+          <div class="row-fluid">
+            <label class="btn btn-lg btn-primary" for="upload-file-selector">
+              <input id="upload-file-selector" type="file" name = "file" onchange="$('#upload-file-info').html($(this).val());">
+              <i class="fa_icon icon-upload-alt margin-correction"></i>Upload file
+            </label>
+            <span class='label label-info' id="upload-file-info"></span>
+              <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+          </div>
+      </span>
+    </form>
+      
+  </div> 
+</div>
+</html>
